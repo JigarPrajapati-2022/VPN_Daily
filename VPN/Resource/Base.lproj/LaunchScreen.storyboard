@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.otf">
+            <string>Montserrat-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="jGx-pH-h2M">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-App" translatesAutoresizingMaskIntoConstraints="NO" id="yh0-TR-Oe4">
+                                <rect key="frame" x="117.5" y="358.5" width="179" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yh0-TR-Oe4" secondAttribute="height" id="QdT-SM-lPZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VPN DAILY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQv-6E-4cW">
+                                <rect key="frame" x="139" y="812.5" width="136" height="29.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yh0-TR-Oe4" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.2" id="82z-oP-fkJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jGx-pH-h2M" secondAttribute="trailing" id="CNN-PU-Q3p"/>
+                            <constraint firstItem="jGx-pH-h2M" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="HNC-fz-J92"/>
+                            <constraint firstAttribute="bottom" secondItem="jGx-pH-h2M" secondAttribute="bottom" id="LfY-Xz-MZm"/>
+                            <constraint firstItem="jGx-pH-h2M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W5H-qw-nHq"/>
+                            <constraint firstItem="yh0-TR-Oe4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="X2A-e6-eas"/>
+                            <constraint firstItem="yh0-TR-Oe4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wZM-GQ-gEU"/>
+                            <constraint firstItem="HQv-6E-4cW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xvz-Fr-Td8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HQv-6E-4cW" secondAttribute="bottom" constant="20" id="yxz-bm-k1i"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon-App" width="387" height="291"/>
+        <image name="Splash" width="375" height="812.5"/>
+    </resources>
+</document>

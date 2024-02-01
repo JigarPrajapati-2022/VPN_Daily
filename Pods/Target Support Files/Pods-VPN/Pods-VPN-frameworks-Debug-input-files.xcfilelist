@@ -1,0 +1,19 @@
+${PODS_ROOT}/Target Support Files/Pods-VPN/Pods-VPN-frameworks.sh
+${BUILT_PRODUCTS_DIR}/BBWebImage/BBWebImage.framework
+${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework
+${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework
+${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework
+${BUILT_PRODUCTS_DIR}/FirebaseCrashlytics/FirebaseCrashlytics.framework
+${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework
+${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework
+${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework
+${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework
+${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework
+${BUILT_PRODUCTS_DIR}/SwiftWebVC/SwiftWebVC.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/liquid-swipe/liquid_swipe.framework
+${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework
+${BUILT_PRODUCTS_DIR}/pop/pop.framework
+${BUILT_PRODUCTS_DIR}/OpenVPNAdapter/OpenVPNAdapter.framework

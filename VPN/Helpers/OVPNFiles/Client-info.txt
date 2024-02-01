@@ -1,0 +1,55 @@
+VPN SERVER - San Francisco
+
+ip: 164.90.145.158
+port: 1194
+File: csfc.ovpn
+
+----------------------------
+
+VPN SERVER - Singapore
+
+ip:	128.199.119.80
+port: 1194
+File: csgp.ovpn
+
+----------------------------
+
+VPN SERVER - Amsterdam
+
+ip:	178.62.201.248
+port: 1194
+File: camd.ovpn
+
+----------------------------
+
+VPN SERVER - London
+
+ip: 159.65.28.168
+port: 1194
+File: cldn.ovpn
+
+----------------------------
+
+VPN SERVER - Frankfurt
+
+ip:	165.22.84.232
+port: 1194
+File: cfkt.ovpn
+
+----------------------------
+
+VPN SERVER - Toronto
+
+ip: 165.227.44.130
+port: 1194
+File: ctrt.ovpn
+
+----------------------------
+
+VPN SERVER - Bangalore
+
+ip: 139.59.59.90
+port: 1194
+File: cblr.ovpn
+
+----------------------------

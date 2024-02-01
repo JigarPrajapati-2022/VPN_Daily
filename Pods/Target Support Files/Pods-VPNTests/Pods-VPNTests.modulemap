@@ -1,0 +1,6 @@
+framework module Pods_VPNTests {
+  umbrella header "Pods-VPNTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
