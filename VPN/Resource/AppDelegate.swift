@@ -40,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GADFullScreenContentDelega
             try FileManager.default.removeItem(atPath: NSHomeDirectory() + "/Library/SplashBoard")
         } catch {
         }
+        
         IPASubScriptionService.shared.getProduct()
         getCountryNames()
         serverAddress = UserDefaultsManager().serverAddress ?? ""
