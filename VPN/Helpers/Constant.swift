@@ -12,7 +12,8 @@ struct AppColors {
     static var BlackColor:UIColor = UIColor.black
     static var GradiantFirst:UIColor = UIColor(red: 255/255, green: 36/255, blue: 79/255, alpha: 1)
     static var GradiantSecond:UIColor = UIColor(red: 253/255, green: 1/255, blue: 119/255, alpha: 1)
-    static var backGroundBlack:UIColor = UIColor(red: 25/255, green: 25/255, blue: 25/255, alpha: 1)
+    static var backGroundBlack:UIColor = UIColor().getHexaColor(hexString: "1D2031")
+    
 }
 
 struct  AppFlyerKeys {

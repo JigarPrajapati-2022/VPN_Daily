@@ -29,9 +29,10 @@ class HomeVC: UIViewController, GADFullScreenContentDelegate, SubScriptionProtoc
     @IBOutlet weak var connectLbl: UILabel!
     @IBOutlet weak var selectedServerName: UILabel!
     @IBOutlet weak var selectedServerImg: UIImageView!
-    
-    @IBOutlet weak var upGradeBtn: UIButton!
-    @IBOutlet weak var upgradView: UIView!
+    @IBOutlet weak var selectedServerIP: UILabel!
+
+//    @IBOutlet weak var upGradeBtn: UIButton!
+//    @IBOutlet weak var upgradView: UIView!
     var gradiant:CAGradientLayer!
     
     @IBOutlet weak var switchBgView: UIView!
@@ -43,7 +44,8 @@ class HomeVC: UIViewController, GADFullScreenContentDelegate, SubScriptionProtoc
     @IBOutlet weak var uploadSpeedLbl: UILabel!
     @IBOutlet weak var downloadSpeedLbl: UILabel!
     var isConnected = false
-
+    @IBOutlet weak var purchasBtn: UIButton!
+    
     
     var myticker : Timer?
     var pulseAnimation:Timer?
@@ -75,7 +77,7 @@ class HomeVC: UIViewController, GADFullScreenContentDelegate, SubScriptionProtoc
         
 //        connectLbl.text = "TAP TO CONNNECT"
         
-        upgradView.applyGradient(colours: [AppColors.GradiantFirst,AppColors.GradiantSecond], locations: [0.0,0.5,1.0], corner: 0)
+//        upgradView.applyGradient(colours: [AppColors.GradiantFirst,AppColors.GradiantSecond], locations: [0.0,0.5,1.0], corner: 0)
         
 
         uploadSpeedLbl.text = "- "
@@ -193,18 +195,20 @@ class HomeVC: UIViewController, GADFullScreenContentDelegate, SubScriptionProtoc
     }
     
     
-    @IBAction func upgradeBtnTap(_ sender: UIButton) {
-        let subScriptionVC = self.storyboard?.instantiateViewController(withIdentifier: "subScriptionVC") as! subScriptionVC
-        subScriptionVC.isWhereToCome = "list"
-
-      self.navigationController?.pushViewController(subScriptionVC, animated: true)
-    }
+//    @IBAction func upgradeBtnTap(_ sender: UIButton) {
+//        let subScriptionVC = self.storyboard?.instantiateViewController(withIdentifier: "subScriptionVC") as! subScriptionVC
+//        subScriptionVC.isWhereToCome = "list"
+//
+//      self.navigationController?.pushViewController(subScriptionVC, animated: true)
+//    }/
     
     @IBAction func severListBtnTap(_ sender: UIButton) {
         let severList = self.storyboard?.instantiateViewController(withIdentifier: "ServerListVC") as! ServerListVC
       self.navigationController?.pushViewController(severList, animated: true)
     }
     
+    @IBAction func purchaseBtnPress(_ sender: UIButton) {
+    }
     
     @IBAction func settingBtnTap(_ sender: UIButton) {
         let settingVC = self.storyboard?.instantiateViewController(withIdentifier: "SettingVC") as! SettingVC
@@ -359,7 +363,8 @@ extension  HomeVC {
             let callback = { (error: Error?) -> Void in
                 self.manager?.loadFromPreferences(completionHandler: { (error) in
                     guard error == nil else {
-                        print("\(error!.localizedDescription)")
+                        self.view.isUserInteractionEnabled = true
+                        print(" error \(error!.localizedDescription)")
                         return
                     }
                     
@@ -416,7 +421,8 @@ extension  HomeVC {
             
             
             
-            
+            self.view.isUserInteractionEnabled = true
+
             
             UserDefaultsManager().isConnectedToVPN = false
             print("Disconnected...")
@@ -427,7 +433,7 @@ extension  HomeVC {
         
         NETunnelProviderManager.loadAllFromPreferences { (managers, error) in
             guard error == nil else {
-                
+                self.view.isUserInteractionEnabled = true
                 UserDefaultsManager().isConnectedToVPN = false
                 callback(error)
                 return
@@ -438,7 +444,7 @@ extension  HomeVC {
                 guard error == nil else {
                     
                     
-                    
+                    self.view.isUserInteractionEnabled = true
                     UserDefaultsManager().isConnectedToVPN = false
                     print("Disconnected...")
                     
@@ -451,6 +457,7 @@ extension  HomeVC {
                 if #available(iOS 14.0, *) {
                     tunnelProtocol.includeAllNetworks = true
                 } else {
+                    self.view.isUserInteractionEnabled = true
                     // Fallback on earlier versions
                 }
                 tunnelProtocol.serverAddress = ""
@@ -466,7 +473,7 @@ extension  HomeVC {
                     guard error == nil else {
                         print("\(error!.localizedDescription)")
                         
-                        
+                        self.view.isUserInteractionEnabled = true
                         
                         UserDefaultsManager().isConnectedToVPN = false
                         print("Disconnected...")
