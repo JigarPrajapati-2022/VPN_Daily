@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 struct AppColors {
-    static var PinkAppColor:UIColor = #colorLiteral(red: 0.9921568627, green: 0.003921568627, blue: 0.4666666667, alpha: 1)
+    static var PinkAppColor:UIColor = #colorLiteral(red: 0.2549019608, green: 0.5254901961, blue: 0.9490196078, alpha: 1)
     static var BlackColor:UIColor = UIColor.black
     static var GradiantFirst:UIColor = UIColor(red: 255/255, green: 36/255, blue: 79/255, alpha: 1)
     static var GradiantSecond:UIColor = UIColor(red: 253/255, green: 1/255, blue: 119/255, alpha: 1)
