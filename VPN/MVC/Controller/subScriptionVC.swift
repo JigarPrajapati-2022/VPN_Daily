@@ -17,25 +17,25 @@ class subScriptionVC: UIViewController {
     
     
     
-    @IBOutlet weak var firstDiccountLbl: UILabel!
+    @IBOutlet weak var firstSelection: UIImageView!
+    @IBOutlet weak var firstDiccountLbl: UILabel! // per week
     @IBOutlet weak var firstView: UIView!
-    @IBOutlet weak var firstTopView: UIView!
-    @IBOutlet weak var firstTimeLbl: UILabel!
-    @IBOutlet weak var firstPriceLbl: UILabel!
+    @IBOutlet weak var firstTimeLbl: UILabel! // 1 week, 1 month , 1 year
+    @IBOutlet weak var firstPriceLbl: UILabel! // price
     @IBOutlet weak var firstBtn: UIButton!
     
-    @IBOutlet weak var SecondDiccountLbl: UILabel!
+    @IBOutlet weak var secondSelection: UIImageView!
+    @IBOutlet weak var secondDiccountLbl: UILabel! // per week
     @IBOutlet weak var secondView: UIView!
-    @IBOutlet weak var secondTopView: UIView!
-    @IBOutlet weak var secondTimeLbl: UILabel!
-    @IBOutlet weak var secondPriceLbl: UILabel!
+    @IBOutlet weak var secondTimeLbl: UILabel! // 1 week, 1 month , 1 year
+    @IBOutlet weak var secondPriceLbl: UILabel! // price
     @IBOutlet weak var secondBtn: UIButton!
     
-    @IBOutlet weak var ThirdDiccountLbl: UILabel!
+    @IBOutlet weak var thirdSelection: UIImageView!
+    @IBOutlet weak var thirdDiccountLbl: UILabel! // per week
     @IBOutlet weak var thirdView: UIView!
-    @IBOutlet weak var thirdTopView: UIView!
-    @IBOutlet weak var thirdTimeLbl: UILabel!
-    @IBOutlet weak var thirdPriceLbl: UILabel!
+    @IBOutlet weak var thirdTimeLbl: UILabel! // 1 week, 1 month , 1 year
+    @IBOutlet weak var thirdPriceLbl: UILabel! // price
     @IBOutlet weak var thirdBtn: UIButton!
     
     
@@ -51,19 +51,13 @@ class subScriptionVC: UIViewController {
             thirdView.borderWidth = 1.5
         
         
-        
         if isWhereToCome == "list" {
             closeBtn.setImage(#imageLiteral(resourceName: "back"), for: .normal)
         } else {
             closeBtn.setImage(#imageLiteral(resourceName: "cross"), for: .normal)
         }
         
-        firstTopView.applyGradient(colours: [AppColors.GradiantFirst,AppColors.GradiantSecond], locations: [0.0,0.5,1.0], corner: 0)
-        secondTopView.applyGradient(colours: [AppColors.GradiantFirst,AppColors.GradiantSecond], locations: [0.0,0.5,1.0], corner: 0)
-        thirdTopView.applyGradient(colours: [AppColors.GradiantFirst,AppColors.GradiantSecond], locations: [0.0,0.5,1.0], corner: 0)
         
-        
-        continueBtn.applyGradient(colours: [AppColors.GradiantFirst,AppColors.GradiantSecond], locations: [0.0,0.5,1.0], corner: 10)
         
         if UserDefaultsManager().purchasePlan == IPAProduct.Mounth.rawValue {
             selectSubScriptionOption(option: 2)
@@ -83,9 +77,9 @@ class subScriptionVC: UIViewController {
                 self.secondPriceLbl.text = "\(UserDefaultsManager().monthlyPrice ?? "")"
                 self.thirdPriceLbl.text = "\(UserDefaultsManager().yearlyPrice ?? "")"
                 
-                self.firstDiccountLbl.text = "\(contrySy) \(UserDefaultsManager().weeklyOfferPrice ?? "") /per week"
-                self.SecondDiccountLbl.text = "\(contrySy) \(UserDefaultsManager().monthlyOfferPrice ?? "") /per week"
-                self.ThirdDiccountLbl.text = "\(contrySy) \(UserDefaultsManager().yearlyOfferPrice ?? "") /per week"
+                self.firstDiccountLbl.text = "/week"
+                self.secondDiccountLbl.text = "/week"
+                self.thirdDiccountLbl.text = "/week"
                 
             }
             
@@ -94,9 +88,9 @@ class subScriptionVC: UIViewController {
             secondPriceLbl.text = "\(UserDefaultsManager().monthlyPrice ?? "")"
             thirdPriceLbl.text = "\(UserDefaultsManager().yearlyPrice ?? "")"
             
-            firstDiccountLbl.text = "\(contrySy) \(UserDefaultsManager().weeklyOfferPrice ?? "") /per week"
-            SecondDiccountLbl.text = "\(contrySy) \(UserDefaultsManager().monthlyOfferPrice ?? "") /per week"
-            ThirdDiccountLbl.text = "\(contrySy) \(UserDefaultsManager().yearlyOfferPrice ?? "") /per week"
+            firstDiccountLbl.text = "/week"
+            secondDiccountLbl.text = "/week"
+            thirdDiccountLbl.text = "/week"
             
         }
         
@@ -131,32 +125,56 @@ class subScriptionVC: UIViewController {
     
     func selectSubScriptionOption(option:Int) {
         print("option \(option)")
+        firstView.removeGradientLayer()
+        secondView.removeGradientLayer()
+        thirdView.removeGradientLayer()
         selectedOption = option
         switch  option {
         case 1:
-            firstView.borderWidth = 1.5
-            secondView.borderWidth = 1.5
-            thirdView.borderWidth = 1.5
+//            firstView.borderWidth = 1.5
+//            secondView.borderWidth = 1.5
+//            thirdView.borderWidth = 1.5
             
+            firstSelection.image = UIImage(named: "Radio_selection")
+            secondSelection.image = UIImage(named: "Radio")
+            thirdSelection.image = UIImage(named: "Radio")
+
+            firstView.applyGradient(colours: [AppColors.GradiantFirst,AppColors.GradiantSecond], locations: [0.0,0.5,1.0], corner: 0)
             
-            
-            firstView.borderColor = AppColors.PinkAppColor
+           // firstView.borderColor = AppColors.PinkAppColor
             secondView.borderColor = .clear
             thirdView.borderColor = .clear
             break
         case 2:
-            firstView.borderColor = .clear
-            secondView.borderColor = AppColors.PinkAppColor
-            thirdView.borderColor = .clear
+            
+            firstSelection.image = UIImage(named: "Radio")
+            secondSelection.image = UIImage(named: "Radio_selection")
+            thirdSelection.image = UIImage(named: "Radio")
+            secondView.applyGradient(colours: [AppColors.GradiantFirst,AppColors.GradiantSecond], locations: [0.0,0.5,1.0], corner: 0)
+            
+            
+//            firstView.borderColor = .clear
+//            secondView.borderColor = AppColors.PinkAppColor
+//            thirdView.borderColor = .clear
             break
         case 3:
-            firstView.borderColor = .clear
-            secondView.borderColor = .clear
-            thirdView.borderColor = AppColors.PinkAppColor
+            
+            
+            firstSelection.image = UIImage(named: "Radio")
+            secondSelection.image = UIImage(named: "Radio")
+            thirdSelection.image = UIImage(named: "Radio_selection")
+            
+//            firstView.borderColor = .clear
+//            secondView.borderColor = .clear
+//            thirdView.borderColor = AppColors.PinkAppColor
+            
+            thirdView.applyGradient(colours: [AppColors.GradiantFirst,AppColors.GradiantSecond], locations: [0.0,0.5,1.0], corner: 0)
             break
         default:
             break
         }
+        
+        continueBtn.applyGradient(colours: [AppColors.GradiantFirst,AppColors.GradiantSecond], locations: [0.0,0.5,1.0], corner: 10)
     }
 
     

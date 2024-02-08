@@ -208,6 +208,10 @@ class HomeVC: UIViewController, GADFullScreenContentDelegate, SubScriptionProtoc
     }
     
     @IBAction func purchaseBtnPress(_ sender: UIButton) {
+                let subScriptionVC = self.storyboard?.instantiateViewController(withIdentifier: "subScriptionVC") as! subScriptionVC
+                subScriptionVC.isWhereToCome = "list"
+        
+              self.navigationController?.pushViewController(subScriptionVC, animated: true)
     }
     
     @IBAction func settingBtnTap(_ sender: UIButton) {

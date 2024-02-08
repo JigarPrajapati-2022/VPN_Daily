@@ -31,6 +31,11 @@ extension UIView {
                self.layer.insertSublayer(gradient, at: 0)
                return gradient
            }
+    func removeGradientLayer() {
+        if let gradientLayer = self.layer.sublayers?.first(where: { $0 is CAGradientLayer }) {
+            gradientLayer.removeFromSuperlayer()
+        }
+    }
     // ->1
     enum Direction: Int {
         case topToBottom = 0
